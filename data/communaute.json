@@ -1,0 +1,170 @@
+[
+  {
+    "id": "outfit-001",
+    "author": {
+      "name": "Lina.style",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Lina"
+    },
+    "image": "images/Lina.jfif",
+    "style": "casual",
+    "likes": 42,
+    "saved": false,
+    "pieces": ["Jean droit taille haute", "T-shirt blanc oversize", "Baskets blanches"]
+  },
+  {
+    "id": "outfit-002",
+    "author": {
+      "name": "Mehdi_k",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Mehdi"
+    },
+    "image": "images/Mehdi.jfif",
+    "style": "streetwear",
+    "likes": 87,
+    "saved": false,
+    "pieces": ["Hoodie gris", "Cargo pants noir", "Sneakers montantes", "Casquette"]
+  },
+  {
+    "id": "outfit-003",
+    "author": {
+      "name": "Sarah.wears",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Sarah"
+    },
+    "image": "images/Sarah.jfif",
+    "style": "chic",
+    "likes": 156,
+    "saved": false,
+    "pieces": ["Blazer beige", "Pantalon fluide noir", "Escarpins", "Sac à main structuré"]
+  },
+  {
+    "id": "outfit-004",
+    "author": {
+      "name": "Yasmine.b",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Yasmine"
+    },
+    "image": "images/Yasmine.jfif",
+    "style": "sport",
+    "likes": 63,
+    "saved": false,
+    "pieces": ["Legging noir", "Brassière technique", "Veste zippée", "Baskets running"]
+  },
+  {
+    "id": "outfit-005",
+    "author": {
+      "name": "Karim_style",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Karim"
+    },
+    "image": "images/Karim.jfif",
+    "style": "casual",
+    "likes": 29,
+    "saved": false,
+    "pieces": ["Chemise en jean", "Pantalon chino beige", "Derbies marron"]
+  },
+  {
+    "id": "outfit-006",
+    "author": {
+      "name": "Nour.styling",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Nour"
+    },
+    "image": "images/Nour.jfif",
+    "style": "streetwear",
+    "likes": 214,
+    "saved": false,
+    "pieces": ["Sweat oversize imprimé", "Jogging large", "Sneakers colorées", "Sac banane"]
+  },
+  {
+    "id": "outfit-007",
+    "author": {
+      "name": "Amira.k",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Amira"
+    },
+    "image": "images/Amira.jfif",
+    "style": "chic",
+    "likes": 98,
+    "saved": false,
+    "pieces": ["Robe midi satinée", "Talons nude", "Pochette dorée"]
+  },
+  {
+    "id": "outfit-008",
+    "author": {
+      "name": "Ryan_active",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Ryan"
+    },
+    "image": "images/Ryan.jfif",
+    "style": "sport",
+    "likes": 51,
+    "saved": false,
+    "pieces": ["Short technique", "T-shirt respirant", "Casquette de sport", "Baskets running"]
+  },
+  {
+    "id": "outfit-009",
+    "author": {
+      "name": "Ines.mode",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Ines"
+    },
+    "image": "images/Ines.jfif",
+    "style": "casual",
+    "likes": 74,
+    "saved": false,
+    "pieces": ["Robe légère à fleurs", "Sandales plates", "Panier en osier"]
+  },
+  {
+    "id": "outfit-010",
+    "author": {
+      "name": "Bilal.fits",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Bilal"
+    },
+    "image": "images/Bilal.jfif",
+    "style": "streetwear",
+    "likes": 132,
+    "saved": false,
+    "pieces": ["Veste en jean oversize", "T-shirt graphique", "Baggy noir", "Sneakers montantes"]
+  },
+  {
+    "id": "outfit-011",
+    "author": {
+      "name": "Camille_look",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Camille"
+    },
+    "image": "images/Camille.jfif",
+    "style": "chic",
+    "likes": 45,
+    "saved": false,
+    "pieces": ["Pull en maille col roulé", "Jupe crayon", "Bottines en cuir"]
+  },
+  {
+    "id": "outfit-012",
+    "author": {
+      "name": "Adam.wear",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Adam"
+    },
+    "image": "images/Adam.jfif",
+    "style": "casual",
+    "likes": 38,
+    "saved": false,
+    "pieces": ["Sweat col rond", "Jean droit délavé", "Baskets basses"]
+  },
+  {
+    "id": "outfit-013",
+    "author": {
+      "name": "Sofia.k",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Sofia"
+    },
+    "image": "images/Sofia.jfif",
+    "style": "sport",
+    "likes": 89,
+    "saved": false,
+    "pieces": ["Brassière de sport", "Legging taille haute", "Veste coupe-vent"]
+  },
+  {
+    "id": "outfit-014",
+    "author": {
+      "name": "Tariq_style",
+      "avatar": "https://api.dicebear.com/7.x/notionists/svg?seed=Tariq"
+    },
+    "image": "images/Tariq.jfif",
+    "style": "streetwear",
+    "likes": 176,
+    "saved": false,
+    "pieces": ["Doudoune courte", "Pantalon cargo", "Bonnet", "Sneakers montantes"]
+  }
+]

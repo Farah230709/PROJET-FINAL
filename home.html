@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleApp — Accueil</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body data-page="home">
+
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="home.html" class="navbar__logo">StyleApp</a>
+
+      <nav class="navbar__links">
+        <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+        <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+        <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+        <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+        <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="theme-switcher">
+          <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+          <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+          <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+          <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+        </div>
+
+        <a href="login.html" id="loginNavLink" class="btn btn--outline" hidden>Connexion</a>
+
+        <div class="user-menu" id="userMenu" hidden>
+          <button class="user-menu__trigger" id="userMenuTrigger" aria-label="Menu utilisateur">
+            <img class="user-menu__avatar" src="https://api.dicebear.com/7.x/notionists/svg?seed=user" alt="Mon avatar">
+          </button>
+          <div class="user-menu__dropdown" id="userDropdown" hidden>
+            <a href="login.html" id="logoutBtn">Se déconnecter</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+      <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+      <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+      <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+      <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+            <a href="login.html" id="mobileLoginLink" class="nav-link" hidden>Connexion</a>
+      <a href="login.html" id="mobileLogoutLink" class="nav-link" hidden>Se déconnecter</a>
+      <div class="mobile-menu__theme">
+        <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+        <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+        <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+        <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  </header>
+
+  <main class="home">
+
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Ton style, réinventé chaque jour</h1>
+        <p>StyleApp t'aide à organiser ton dressing, à découvrir des tenues inspirantes et à créer des looks qui te ressemblent — à partir de tes propres vêtements.</p>
+        <div class="hero__actions">
+          <a href="generator.html" class="btn btn--primary">Générer une tenue</a>
+          <a href="dressing.html" class="btn btn--outline">Voir mon dressing</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__piece hero__piece--1">👗</div>
+        <div class="hero__piece hero__piece--2">👟</div>
+        <div class="hero__piece hero__piece--3">👜</div>
+        <div class="hero__piece hero__piece--4">🧥</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-header">
+        <h2>Ce que tu peux faire</h2>
+      </div>
+
+      <div class="features__grid">
+        <article class="card feature-card">
+          <span class="feature-card__icon">👗</span>
+          <h3>Gérer son dressing</h3>
+          <p>Ajoute tes vêtements, organise-les par catégorie et saison, et garde une trace de tout ce que tu possèdes déjà.</p>
+          <a href="dressing.html" class="link-more">Ouvrir le dressing</a>
+        </article>
+
+        <article class="card feature-card">
+          <span class="feature-card__icon">✨</span>
+          <h3>Générer une tenue</h3>
+          <p>Laisse StyleApp composer une tenue à partir de tes vêtements selon l'occasion, la météo et ton humeur du jour.</p>
+          <a href="generator.html" class="link-more">Essayer le générateur</a>
+        </article>
+
+        <article class="card feature-card">
+          <span class="feature-card__icon">💬</span>
+          <h3>Demander conseil au styliste</h3>
+          <p>Pose tes questions de style à ton assistant personnel : occasions, couleurs, associations de pièces...</p>
+          <a href="chatbot.html" class="link-more">Discuter avec le styliste</a>
+        </article>
+
+        <article class="card feature-card">
+          <span class="feature-card__icon">🌍</span>
+          <h3>Découvrir le feed communautaire</h3>
+          <p>Explore les tenues partagées par d'autres utilisateurs et enregistre celles qui t'inspirent.</p>
+          <a href="feed.html" class="link-more">Explorer le feed</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo promo--generator">
+      <div class="promo__text">
+        <h2>Une tenue pensée pour toi, en un clic</h2>
+        <p>Choisis l'occasion, la météo, ton humeur et ton style préféré : le générateur compose une tenue complète à partir de ce que tu as déjà dans ton dressing.</p>
+        <a href="generator.html" class="btn btn--primary">Générer ma tenue</a>
+      </div>
+      <div class="promo__tags" aria-hidden="true">
+        <span class="promo__tag">Occasion</span>
+        <span class="promo__tag">Météo</span>
+        <span class="promo__tag">Humeur</span>
+        <span class="promo__tag">Style</span>
+      </div>
+    </section>
+
+    <section class="promo promo--chatbot">
+      <div class="promo__tags" aria-hidden="true">
+        <span class="promo__bubble">Quelle tenue pour ce soir ?</span>
+        <span class="promo__bubble promo__bubble--reply">Je te propose...</span>
+      </div>
+      <div class="promo__text">
+        <h2>Un styliste toujours disponible</h2>
+        <p>Le styliste virtuel de StyleApp répond à tes questions de mode et te propose des idées de tenues à partir de ton dressing, à tout moment.</p>
+        <a href="chatbot.html" class="btn btn--secondary">Parler au styliste</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="navbar__logo">StyleApp</span>
+    <p>Ton dressing, réinventé chaque jour.</p>
+  </footer>
+<script src="js/nav.js" defer></script>
+</body>
+</html>

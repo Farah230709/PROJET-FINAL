@@ -1,0 +1,120 @@
+.auth {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
+  flex-wrap: wrap;
+}
+
+.auth__visual {
+  flex: 1 1 320px;
+  max-width: 380px;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-surface-alt), var(--color-primary));
+  position: relative;
+}
+
+.auth__visual::before {
+  content: "👗";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+}
+
+.auth__card {
+  flex: 1 1 360px;
+  max-width: 400px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-lg);
+}
+
+.auth__tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.auth__tab {
+  flex: 1;
+  padding: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  border-bottom: 2px solid transparent;
+}
+
+.auth__tab.is-active {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.auth__form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  margin-top: var(--space-xs);
+}
+
+.auth__form input {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.auth__form .style-chips {
+  border: none;
+  padding: 0;
+  margin: var(--space-xs) 0;
+}
+
+.auth__form .style-chips legend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.auth__form .style-chips .chip {
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.auth__form button[type="submit"] {
+  margin-top: var(--space-sm);
+}
+
+.form-error {
+  background-color: var(--color-surface-alt);
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+.auth__switch {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 600px) {
+  .auth__visual { display: none; }
+  .auth__card { width: 100%; }
+}

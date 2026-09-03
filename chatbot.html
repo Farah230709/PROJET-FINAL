@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleApp — Styliste</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body data-page="chatbot">
+
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="home.html" class="navbar__logo">StyleApp</a>
+
+      <nav class="navbar__links">
+        <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+        <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+        <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+        <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+        <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="theme-switcher">
+          <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+          <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+          <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+          <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+        </div>
+
+        <a href="login.html" id="loginNavLink" class="btn btn--outline" hidden>Connexion</a>
+
+        <div class="user-menu" id="userMenu" hidden>
+          <button class="user-menu__trigger" id="userMenuTrigger" aria-label="Menu utilisateur">
+            <img class="user-menu__avatar" src="https://api.dicebear.com/7.x/notionists/svg?seed=user" alt="Mon avatar">
+          </button>
+          <div class="user-menu__dropdown" id="userDropdown" hidden>
+            <a href="login.html" id="logoutBtn">Se déconnecter</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+      <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+      <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+      <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+      <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+            <a href="login.html" id="mobileLoginLink" class="nav-link" hidden>Connexion</a>
+      <a href="login.html" id="mobileLogoutLink" class="nav-link" hidden>Se déconnecter</a>
+      <div class="mobile-menu__theme">
+        <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+        <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+        <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+        <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  </header>
+
+<main class="chatbot">
+
+    <section class="chatbot__header">
+      <h1>Ton styliste</h1>
+      <button id="clearChatBtn" class="btn btn--outline" type="button">Effacer la conversation</button>
+    </section>
+
+    <section class="chatbot__conversation" id="chatWindow" aria-live="polite"></section>
+
+    <section class="chatbot__quick-replies" id="quickReplies">
+      <button class="chip" type="button" data-message="Tenue pour ce soir">Tenue pour ce soir</button>
+      <button class="chip" type="button" data-message="Il fait chaud">Il fait chaud</button>
+      <button class="chip" type="button" data-message="Style casual">Style casual</button>
+      <button class="chip" type="button" data-message="Avec mon jean">Avec mon jean</button>
+      <button class="chip" type="button" data-message="Idée pour une soirée">Idée pour une soirée</button>
+    </section>
+
+    <form class="chatbot__input-bar" id="chatForm">
+      <input type="text" id="chatInput" name="chatInput" autocomplete="off" placeholder="Écris ton message...">
+      <button type="submit" id="sendBtn" class="btn btn--primary">Envoyer</button>
+    </form>
+
+  </main>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

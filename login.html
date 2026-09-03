@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleApp — Connexion</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body data-page="login">
+
+  <header class="auth-header">
+    <a href="login.html" class="navbar__logo">StyleApp</a>
+    <div class="theme-switcher">
+      <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+      <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+      <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+      <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+    </div>
+  </header>
+
+  <main class="auth">
+
+    <div class="auth__visual" aria-hidden="true"></div>
+
+    <div class="auth__card">
+      <div class="auth__tabs">
+        <button id="tabLogin" class="auth__tab is-active" type="button" data-tab="login">Connexion</button>
+        <button id="tabRegister" class="auth__tab" type="button" data-tab="register">Inscription</button>
+      </div>
+
+      <form id="loginForm" class="auth__form">
+        <label for="loginIdentifier">Pseudo ou email</label>
+        <input type="text" id="loginIdentifier" name="loginIdentifier" required>
+
+        <label for="loginPassword">Mot de passe</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+
+        <p id="loginError" class="form-error" hidden></p>
+
+        <button type="submit" class="btn btn--primary">Se connecter</button>
+        <p class="auth__switch">Pas encore de compte ? <a href="#" id="switchToRegister">Inscris-toi</a></p>
+      </form>
+
+      <form id="registerForm" class="auth__form" hidden>
+        <label for="registerPseudo">Pseudo</label>
+        <input type="text" id="registerPseudo" name="registerPseudo" required>
+
+        <label for="registerEmail">Email</label>
+        <input type="email" id="registerEmail" name="registerEmail" required>
+
+        <label for="registerPassword">Mot de passe</label>
+        <input type="password" id="registerPassword" name="registerPassword" required minlength="6">
+
+        <label for="registerConfirm">Confirmer le mot de passe</label>
+        <input type="password" id="registerConfirm" name="registerConfirm" required>
+
+        <fieldset class="style-chips" id="styleChips">
+          <legend>Ton style préféré</legend>
+          <button type="button" class="chip" data-style="casual">Casual</button>
+          <button type="button" class="chip" data-style="chic">Chic</button>
+          <button type="button" class="chip" data-style="streetwear">Streetwear</button>
+          <button type="button" class="chip" data-style="sport">Sportif</button>
+        </fieldset>
+
+        <p id="registerError" class="form-error" hidden></p>
+
+        <button type="submit" class="btn btn--primary">Créer mon compte</button>
+        <p class="auth__switch">Déjà un compte ? <a href="#" id="switchToLogin">Connecte-toi</a></p>
+      </form>
+    </div>
+
+  </main>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/login.js" defer></script>
+</body>
+</html>

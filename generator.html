@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleApp — Générateur de tenues</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/generator.css">
+</head>
+<body data-page="generator">
+
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="home.html" class="navbar__logo">StyleApp</a>
+
+      <nav class="navbar__links">
+        <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+        <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+        <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+        <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+        <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="theme-switcher">
+          <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+          <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+          <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+          <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+        </div>
+
+        <a href="login.html" id="loginNavLink" class="btn btn--outline" hidden>Connexion</a>
+
+        <div class="user-menu" id="userMenu" hidden>
+          <button class="user-menu__trigger" id="userMenuTrigger" aria-label="Menu utilisateur">
+            <img class="user-menu__avatar" src="https://api.dicebear.com/7.x/notionists/svg?seed=user" alt="Mon avatar">
+          </button>
+          <div class="user-menu__dropdown" id="userDropdown" hidden>
+            <a href="login.html" id="logoutBtn">Se déconnecter</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+      <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+      <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+      <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+      <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+            <a href="login.html" id="mobileLoginLink" class="nav-link" hidden>Connexion</a>
+      <a href="login.html" id="mobileLogoutLink" class="nav-link" hidden>Se déconnecter</a>
+      <div class="mobile-menu__theme">
+        <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+        <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+        <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+        <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  </header>
+
+  <main class="generator">
+
+    <section class="generator__form">
+      <h1>Générateur de tenues</h1>
+      <form id="criteriaForm">
+        <label for="occasionSelect">Occasion</label>
+        <select id="occasionSelect" name="occasionSelect">
+          <option value="quotidien">Quotidien</option>
+          <option value="travail">Travail</option>
+          <option value="soiree">Soirée</option>
+          <option value="sport">Sport</option>
+        </select>
+
+        <label for="weatherSelect">Météo</label>
+<select id="weatherSelect" name="weatherSelect">
+  <option value="auto">Automatique</option>
+  <option value="chaud">Chaud</option>
+  <option value="froid">Froid</option>
+  <option value="pluie">Pluie</option>
+</select>
+
+<label for="moodSelect">Humeur</label>
+<select id="moodSelect" name="moodSelect">
+  <option value="">Peu importe</option>
+  <option value="energique">Énergique</option>
+  <option value="calme">Calme</option>
+  <option value="romantique">Romantique</option>
+  <option value="confiante">Confiante</option>
+  <option value="creative">Créative</option>
+</select>
+
+<fieldset class="style-chips" id="generatorStyleChips">
+          <legend>Style</legend>
+          <button type="button" class="chip" data-style="casual">Casual</button>
+          <button type="button" class="chip" data-style="chic">Chic</button>
+          <button type="button" class="chip" data-style="streetwear">Streetwear</button>
+          <button type="button" class="chip" data-style="sport">Sportif</button>
+        </fieldset>
+
+        <button type="submit" id="generateBtn" class="btn btn--primary">Générer ma tenue</button>
+      </form>
+    </section>
+
+    <section class="generator__result" id="resultSection" aria-live="polite">
+      <div class="moodboard" id="moodboard"></div>
+      <p id="notEnoughItems" class="empty-state" hidden>
+        Ton dressing n'a pas encore assez de pièces pour cette combinaison.
+        <a href="dressing.html">Ajouter des vêtements</a>
+      </p>
+      <div class="generator__actions" id="resultActions" hidden>
+        <button id="regenerateBtn" class="btn btn--outline" type="button">Une autre suggestion</button>
+        <button id="saveOutfitBtn" class="btn btn--secondary" type="button">Enregistrer</button>
+        <button id="shareOutfitBtn" class="btn btn--primary" type="button">Partager sur le feed</button>
+      </div>
+    </section>
+
+    <section class="generator__history">
+      <h2>Mes tenues enregistrées</h2>
+      <div class="grid grid--preview" id="savedOutfitsGrid"></div>
+    </section>
+
+  </main>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/generator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleApp — Mon dressing</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/dressing.css">
+</head>
+<body data-page="dressing">
+
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="home.html" class="navbar__logo">StyleApp</a>
+
+      <nav class="navbar__links">
+        <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+        <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+        <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+        <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+        <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="theme-switcher">
+          <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+          <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+          <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+          <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+        </div>
+
+        <a href="login.html" id="loginNavLink" class="btn btn--outline" hidden>Connexion</a>
+
+        <div class="user-menu" id="userMenu" hidden>
+          <button class="user-menu__trigger" id="userMenuTrigger" aria-label="Menu utilisateur">
+            <img class="user-menu__avatar" src="https://api.dicebear.com/7.x/notionists/svg?seed=user" alt="Mon avatar">
+          </button>
+          <div class="user-menu__dropdown" id="userDropdown" hidden>
+            <a href="login.html" id="logoutBtn">Se déconnecter</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="home.html" class="nav-link" data-page="home">Accueil</a>
+      <a href="dressing.html" class="nav-link" data-page="dressing">Dressing</a>
+      <a href="feed.html" class="nav-link" data-page="feed">Feed</a>
+      <a href="generator.html" class="nav-link" data-page="generator">Générateur</a>
+      <a href="chatbot.html" class="nav-link" data-page="chatbot">Styliste</a>
+            <a href="login.html" id="mobileLoginLink" class="nav-link" hidden>Connexion</a>
+      <a href="login.html" id="mobileLogoutLink" class="nav-link" hidden>Se déconnecter</a>
+      <div class="mobile-menu__theme">
+        <button class="theme-dot" data-theme="light" aria-label="Thème clair"></button>
+        <button class="theme-dot" data-theme="dark" aria-label="Thème sombre"></button>
+        <button class="theme-dot" data-theme="pink" aria-label="Thème rose"></button>
+        <button class="theme-dot" data-theme="lavender" aria-label="Thème lavande"></button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  </header>
+
+  <main class="dressing">
+
+    <section class="dressing__header">
+      <h1>Mon dressing</h1>
+      <p id="itemCount" class="dressing__count">0 pièce</p>
+      <button id="openAddModalBtn" class="btn btn--primary" type="button">Ajouter un vêtement</button>
+    </section>
+
+    <section class="dressing__filters" aria-label="Filtres">
+      <input type="search" id="searchInput" placeholder="Rechercher un vêtement...">
+
+      <div class="filter-chips" id="categoryFilters">
+        <button class="chip is-active" data-category="all" type="button">Tout</button>
+        <button class="chip" data-category="haut" type="button">Hauts</button>
+        <button class="chip" data-category="bas" type="button">Bas</button>
+        <button class="chip" data-category="chaussures" type="button">Chaussures</button>
+        <button class="chip" data-category="accessoire" type="button">Accessoires</button>
+      </div>
+
+      <select id="seasonFilter">
+        <option value="all">Toutes saisons</option>
+        <option value="ete">Été</option>
+        <option value="hiver">Hiver</option>
+        <option value="mi-saison">Mi-saison</option>
+      </select>
+    </section>
+
+    <section class="dressing__grid-section">
+      <div class="grid grid--dressing" id="dressingGrid"></div>
+      <p id="emptyState" class="empty-state" hidden>Ton dressing est vide pour l'instant. Ajoute ta première pièce !</p>
+    </section>
+
+  </main>
+
+  <div class="modal" id="itemModal" hidden>
+    <div class="modal__content">
+      <button id="closeItemModal" class="modal__close" type="button" aria-label="Fermer">&times;</button>
+      <h3 id="modalTitle">Ajouter un vêtement</h3>
+      <form id="itemForm">
+        <input type="hidden" id="itemId" name="itemId">
+
+        <label for="itemName">Nom</label>
+        <input type="text" id="itemName" name="itemName" required>
+
+        <label for="itemCategory">Catégorie</label>
+        <select id="itemCategory" name="itemCategory" required>
+          <option value="haut">Haut</option>
+          <option value="bas">Bas</option>
+          <option value="chaussures">Chaussures</option>
+          <option value="accessoire">Accessoire</option>
+        </select>
+
+        <label for="itemColor">Couleur</label>
+        <input type="text" id="itemColor" name="itemColor">
+
+        <fieldset id="itemSeasons">
+          <legend>Saisons</legend>
+          <label><input type="checkbox" name="itemSeason" value="ete"> Été</label>
+          <label><input type="checkbox" name="itemSeason" value="hiver"> Hiver</label>
+          <label><input type="checkbox" name="itemSeason" value="mi-saison"> Mi-saison</label>
+        </fieldset>
+
+        <label for="itemImage">Photo</label>
+        <input type="file" id="itemImage" name="itemImage" accept="image/*">
+        <img id="itemImagePreview" hidden alt="Aperçu du vêtement">
+
+        <button type="submit" id="saveItemBtn" class="btn btn--primary">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal modal--confirm" id="confirmDeleteModal" hidden>
+    <div class="modal__content">
+      <p>Supprimer ce vêtement de ton dressing ?</p>
+      <button id="confirmDeleteBtn" class="btn btn--danger" type="button">Supprimer</button>
+      <button id="cancelDeleteBtn" class="btn btn--outline" type="button">Annuler</button>
+    </div>
+  </div>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/dressing.js" defer></script>
+</body>
+</html>
